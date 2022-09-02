@@ -10,7 +10,7 @@
 </head>
 <body>  
     <div class="container">
-        <form action="">
+        <form action="" id="formulario">
             <div class="mb-3 mt-3">
                 <label for="nombre" class="form-label">Nombre</label>               
                 <input type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre" class="form-control"> 
@@ -20,11 +20,31 @@
                 <input type="password" name="clave" id="clave" placeholder="Ingrese su clave" class="form-control">
             </div>
             <div class="mb-3">
-                <button type="submit" class="btn btn-primary" onclick="verificar()">Aceptar</button>
+                <button type="submit" class="btn btn-primary">Aceptar</button>
             </div>
         </form>        
     </div>
-    <script src="login.js"></script>
+    <script>
+        // los eventos se capturan por el id de los elementos html y se utiliza una funcion anonima.
+
+        const user = "JonathanHe"
+        const pw = 1234
+        window.onload = function () {
+            document.getElementById("formulario").onsubmit =  function () {
+                    let usuario =document.getElementById("nombre").value
+                    let clave = document.getElementById("clave").value
+                    if (user == usuario && pw == clave){
+                    window.alert("Login exitoso")
+                    }else{
+                        alert("Verifique los datos ingresados")
+                    }
+                }
+            }
+
+        
+        
+       
+    </script>
 
     
 </body>
